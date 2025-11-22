@@ -5,11 +5,14 @@ import Image from 'next/image';
 import icon from '../assets/icons/icon.svg';
 import hamburger from '../assets/icons/hamburger.svg';
 import NavButtons from './SecondaryButton';
+import Banner from './Banner';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
+    <>
+    <Banner />
     <nav 
       className="bg-[#1A1A1A] px-4 md:px-20 2xl:px-40 h-[68px] md:h-[77px] 2xl:h-[99px]"
       style={{
@@ -76,5 +79,6 @@ export default function Navbar() {
         </div>
       )}
     </nav>
+    </>
   );
 }

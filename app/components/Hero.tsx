@@ -13,6 +13,7 @@ import arrow from '../assets/icons/arrow.svg';
 
 const Hero = () => {
   return (
+
     <div className="w-full overflow-hidden" style={{ background: '#1A1A1A' }}>
       {/* Hero Section */}
       <div className="py-8 md:py-0" style={{ background: '1A1A1A' }}>
@@ -80,9 +81,8 @@ const Hero = () => {
         </div>
 
         {/* Feature Cards Section */}
-        {/* Mobile: 2x2 grid */}
-        {/* MD+: 4 in a row */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2.5 2xl:gap-5 px-4 md:p-2.5 2xl:p-[20px]py-5 bg-[#141414]">
+        {/* Mobile: 2x2 grid | MD+: 4 in a row */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2.5 2xl:gap-5 px-4 md:p-2.5 2xl:p-5 py-5 bg-[#1a1a1a]">
           {/* Feature Card 1 */}
           <Card backgroundColor="#141414" borderColor="#262626" className="h-full w-full">
             <div className="flex flex-col items-center justify-center py-[30px] 2xl:py-10 px-5 relative">

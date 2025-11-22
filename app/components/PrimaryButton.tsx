@@ -12,7 +12,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   label, 
   onClick,
   className = '',
-  width = '191px',
+  width = 'auto',
   height
 }) => {
   const heightClass = height || 'h-[49px] 2xl:h-[63px]';

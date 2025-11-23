@@ -6,14 +6,7 @@
   --navbar-bg: #1A1A1A;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-navbar-bg: var(--navbar-bg);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-urbanist: var(--font-urbanist);
-}
+/* Removed unsupported @theme at-rule; replaced with direct CSS variables above. */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -28,4 +21,50 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+/* Truncate to approximately 1.5 lines (visual):
+   We clamp to 2 lines then add a gradient overlay that covers bottom portion
+   to simulate 1.5 lines. Use .subtitle-wrapper around text + action button. */
+.subtitle-wrapper {
+  position: relative;
+}
+
+.subtitle-truncate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* approximate; gradient masks bottom half */
+  line-clamp: 2; /* non-standard future property for compatibility */
+  overflow: hidden;
+  position: relative;
+  padding-right: 80px; /* space for Read More button overlap */
+}
+
+.subtitle-wrapper:not(.expanded) .subtitle-truncate:after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%; /* cover lower half of second line */
+  background: linear-gradient(to bottom, rgba(20,20,20,0), rgba(20,20,20,1));
+}
+
+.read-more-btn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: underline;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.read-more-btn:focus {
+  outline: 2px solid #703BF7;
+  outline-offset: 2px;
 }

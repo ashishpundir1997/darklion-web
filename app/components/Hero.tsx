@@ -16,7 +16,7 @@ const Hero = () => {
 
     <div className="w-full md:bg-[#1A1A1A] bg-[#141414]" >
       {/* Hero Section */}
-      <div className="py-10 md:py-0 md:bg-[#1A1A1A] bg-[#141414]" >
+      <div className="pt-10 md:py-0 md:bg-[#1A1A1A] bg-[#141414]" >
         {/* Main Hero Content - Mobile: Column, MD+: Row with absolute image */}
         <div className="md:relative mb-2.5 md:bg-[#1A1A1A] bg-[#141414]" >
           <div className="flex flex-col md:block  md:bg-[#1A1A1A] bg-[#141414]">
@@ -115,7 +115,7 @@ const Hero = () => {
               }}
             >
               {/* Content Section - Left on MD+ */}
-              <div className="px-4 md:pl-20 2xl:pl-40 md:pr-0 space-y-4 md:space-y-6 pt-10 md:pt-[50px] 2xl:pt-[60px]">
+              <div className="px-4 md:pl-20 2xl:pl-40 md:pr-0 space-y-4 md:space-y-6 pt-4 md:pt-[50px] 2xl:pt-[60px]">
                 {/* Heading */}
                 <h1 className="font-urbanist font-semibold text-[28px] md:text-[46px] 2xl:text-[60px] leading-[120%] text-white">
                   Discover Your Dream Property with Estatein

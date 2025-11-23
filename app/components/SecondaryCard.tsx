@@ -37,7 +37,7 @@ const SecondaryCard: React.FC<CardProps> = ({
         rounded-xl
         p-6
         gap-4
-        md:rounded-[10px] md:p-[30px] md:gap-[30px]
+        md:rounded-[10px] lg:p-[30px]  md:gap-[30px]
         2xl:rounded-xl 2xl:p-10 2xl:gap-[30px]
         transition-all duration-200 ease-in-out
         ${onClick ? 'cursor-pointer hover:shadow-md' : ''}

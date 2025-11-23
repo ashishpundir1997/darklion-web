@@ -180,16 +180,16 @@ const FeatureProperties = () => {
                 <span className="font-urbanist font-medium text-[14px] 2xl:text-[18px] text-[#999999]">Price</span>
                 <span className="font-urbanist font-semibold md:w-[90px] mr-2 text-[16px] md:text-[18px] 2xl:text-[20px] text-white">{prop.price}</span>
               </div>
-              <PrimaryButton label="View Property Details" className="min-w-[140px] md:w-full xl:w-auto" />
+              <PrimaryButton label="View Property Details" className="text-[14px] lg:text-[18px] md:w-full xl:w-auto " />
             </div>
           </SecondaryCard>
         ))}
       </div>
 
       {/* Pagination Box at end */}
-      <div className="w-full border-t border-[#262626] font-medium mt-8 mb-[30px] md:mb-10 2xl:mb-[50px] h-[78px] md:h-[60px] 2xl:h-[65px] flex items-center justify-between">
+      <div className="w-full border-t border-[#262626] font-medium mt-8 mb-[30px] md:mb-10 2xl:mb-[50px]  flex items-center justify-between">
         {/* Mobile (below md): view-all left, arrows + count grouped right */}
-        <div className="w-full flex items-center justify-between md:hidden">
+        <div className="w-full flex items-center justify-between md:hidden pt-4">
           <button
             type="button"
             className="px-5 py-3.5 2xl:px-6 2xl:py-4 rounded-md border border-[#262626] bg-[#1A1A1A] text-white font-urbanist font-semibold text-[14px] 2xl:text-[18px] hover:bg-[#222] transition-colors cursor-pointer"
@@ -228,7 +228,7 @@ const FeatureProperties = () => {
           </div>
         </div>
         {/* Desktop / md+: arrows with count between */}
-        <div className="hidden md:flex w-full justify-end">
+        <div className="hidden md:flex w-full justify-end mt-4 md:mt-5">
           <div className="flex items-center gap-3">
             <button
               type="button"

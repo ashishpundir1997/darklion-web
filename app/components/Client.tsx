@@ -1,15 +1,11 @@
 'use client';
 import  { useState, useEffect } from 'react';
 import stars from '../assets/icons/stars.svg';
-import bedIcon from '../assets/icons/Bed.svg';
-import bathroomIcon from '../assets/icons/bathroom.svg';
-import villaIcon from '../assets/icons/villa.svg';
 import image1 from '../assets/images/image1.png';
 import image2 from '../assets/images/image2.png';
 import image3 from '../assets/images/image3.png';
 import Image, { StaticImageData } from 'next/image';
 import SecondaryCard from './SecondaryCard';
-import PrimaryButton from './PrimaryButton';
 import yellowstar from '../assets/icons/yellowstar.svg';
 
 
@@ -33,7 +29,6 @@ const images = [image1, image2, image3];
 const prices = ['$850,000', '$2,400,000', '$3,150,000'];
 
 const Client = () => {
-  const [expandedIds, setExpandedIds] = useState<number[]>([]);
   const [properties, setProperties] = useState<PropertyItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -67,10 +62,6 @@ const Client = () => {
 
     fetchPosts();
   }, []);
-
-  const toggleExpand = (id: number) => {
-    setExpandedIds(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]);
-  };
 
   // Calculate total pages based on screen size (will use desktop calculation for now)
   const totalPages = Math.ceil(properties.length / ITEMS_PER_PAGE_DESKTOP);
@@ -146,13 +137,13 @@ const Client = () => {
             {/* Mobile: Show only 1 item */}
             <div className="md:hidden">
               {currentMobileItem.map((prop) => (
-                <PropertyCard key={prop.id} prop={prop} expandedIds={expandedIds} toggleExpand={toggleExpand} />
+                <PropertyCard key={prop.id} prop={prop} />
               ))}
             </div>
             {/* Desktop: Show 3 items */}
             <div className="hidden md:contents">
               {currentItems.map((prop) => (
-                <PropertyCard key={prop.id} prop={prop} expandedIds={expandedIds} toggleExpand={toggleExpand} />
+                <PropertyCard key={prop.id} prop={prop} />
               ))}
             </div>
           </>
@@ -268,11 +259,9 @@ const SkeletonCard = () => {
 // Property Card Component
 interface PropertyCardProps {
   prop: PropertyItem;
-  expandedIds: number[];
-  toggleExpand: (id: number) => void;
 }
 
-const PropertyCard = ({ prop, expandedIds, toggleExpand }: PropertyCardProps) => {
+const PropertyCard = ({ prop }: PropertyCardProps) => {
   return (
     <SecondaryCard className="w-full flex flex-col">
       {/* Image */}
@@ -297,11 +286,8 @@ const PropertyCard = ({ prop, expandedIds, toggleExpand }: PropertyCardProps) =>
         {/* Subtitle with inline Read More / Show Less */}
         
           <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#ffffff] leading-[140%]">
-            {prop.subtitle}
-          
-          </h4>
-      
-       
+            {prop.subtitle}  
+          </h4> 
       </div>
       
       {/* Price & Button Row */}

@@ -302,7 +302,7 @@ const PropertyCard = ({ prop, expandedIds, toggleExpand }: PropertyCardProps) =>
       {/* Headings */}
       <div className="flex flex-col gap-1">
         <h3 className="font-urbanist font-semibold text-[18px] md:text-[20px] 2xl:text-[24px] leading-[140%] line-clamp-1">
-          {prop.title}
+          {prop.title.charAt(0).toUpperCase() + prop.title.slice(1)}
         </h3>
         
         {/* Subtitle with inline Read More / Show Less */}
@@ -319,7 +319,7 @@ const PropertyCard = ({ prop, expandedIds, toggleExpand }: PropertyCardProps) =>
                 const w = window.innerWidth;
                 if (w >= 1536) limit = xlLimit; else if (w >= 768) limit = mdLimit;
               }
-              const text = prop.subtitle;
+              const text = prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1);
               if (text.length <= limit) return text;
               const truncated = text.slice(0, limit).split(' ').slice(0, -1).join(' ');
               return truncated + '...';
@@ -335,7 +335,7 @@ const PropertyCard = ({ prop, expandedIds, toggleExpand }: PropertyCardProps) =>
           </h4>
         ) : (
           <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#999999] leading-[140%]">
-            {prop.subtitle}
+            {prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1)}
             <button
               type="button"
               onClick={() => toggleExpand(prop.id)}

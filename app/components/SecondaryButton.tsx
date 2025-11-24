@@ -28,11 +28,11 @@ const NavButtons: React.FC<NavButtonProps> = ({
   return (
     <button
       onClick={onClick}
-      className={`${baseStyles} ${selectedStyles} ${className}`}
+      className={`${baseStyles} ${selectedStyles} ${className} ${width === '100%' ? 'w-full md:w-auto' : ''}`}
       style={{
         opacity: 1,
         gap: '10px',
-        width: width || (isSelected ? 'auto' : 'auto'),
+        width: width && width !== '100%' ? width : undefined,
       }}
     >
       <span className="text-white">{label}</span>

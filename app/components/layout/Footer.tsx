@@ -14,7 +14,7 @@ import youtube from '../../assets/icons/youtube.svg';
 const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-[#141414]">
-      <div className="max-w-[1920px] mx-auto">
+      <div className=" mx-auto">
         {/* CTA Section */}
         <div 
           className="flex flex-col md:flex-row md:items-center md:justify-between items-start justify-center gap-[30px] w-full md:w-auto mx-auto px-4 md:px-20 2xl:px-40 mt-20"
@@ -273,10 +273,10 @@ const Footer: React.FC = () => {
           >
             {/* Social Media Icons */}
             <div className="flex items-center gap-2">
-              <Image src={facebook} alt="Facebook" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
-              <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
-              <Image src={x} alt="X" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
-              <Image src={youtube} alt="YouTube" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+              <Image src={facebook} alt="Facebook" width={40} height={40} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+              <Image src={linkedin} alt="LinkedIn" width={40} height={40} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+              <Image src={x} alt="X" width={40} height={40} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+              <Image src={youtube} alt="YouTube" width={40} height={40} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
             </div>
             
             {/* Copyright */}
@@ -311,10 +311,10 @@ const Footer: React.FC = () => {
             
             {/* Social Media Icons */}
             <div className="flex items-center gap-2">
-              <Image src={facebook} alt="Facebook" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
-              <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
-              <Image src={x} alt="X" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
-              <Image src={youtube} alt="YouTube" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
+              <Image src={facebook} alt="Facebook" width={40} height={40} className="w-10 h-10 cursor-pointer hover:opacity-80 transition" />
+              <Image src={linkedin} alt="LinkedIn" width={40} height={40} className="w-10 h-10 cursor-pointer hover:opacity-80 transition" />
+              <Image src={x} alt="X" width={40} height={40} className="w-10 h-10 cursor-pointer hover:opacity-80 transition" />
+              <Image src={youtube} alt="YouTube" width={40} height={40} className="w-10 h-10 cursor-pointer hover:opacity-80 transition" />
             </div>
           </div>
         </div>

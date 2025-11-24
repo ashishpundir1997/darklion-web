@@ -307,12 +307,12 @@ const PropertyCard = ({ prop, expandedIds, toggleExpand }: PropertyCardProps) =>
         
         {/* Subtitle with inline Read More / Show Less */}
         {(!expandedIds.includes(prop.id)) ? (
-          <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#999999] leading-[140%] overflow-hidden">
+          <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#999999] leading-[140%]">
             {(() => {
-              // approximate truncation targeting ~1.5 lines depending on breakpoint
-              const baseLimit = 70; // mobile
-              const mdLimit = 90;   // md
-              const xlLimit = 110;  // 2xl
+              // Reduce limit to ensure "Read More" fits on the same line
+              const baseLimit = 55; // mobile - reduced to fit "Read More"
+              const mdLimit = 75;   // md - reduced to fit "Read More"
+              const xlLimit = 95;   // 2xl - reduced to fit "Read More"
               // choose limit by window width if available; fallback sequentially
               let limit = baseLimit;
               if (typeof window !== 'undefined') {
@@ -322,25 +322,29 @@ const PropertyCard = ({ prop, expandedIds, toggleExpand }: PropertyCardProps) =>
               const text = prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1);
               if (text.length <= limit) return text;
               const truncated = text.slice(0, limit).split(' ').slice(0, -1).join(' ');
-              return truncated + '...';
+              return (
+                <>
+                  {truncated}...{' '}
+                  <button
+                    type="button"
+                    onClick={() => toggleExpand(prop.id)}
+                    aria-label={`Read more about ${prop.title}`}
+                    className="inline text-white font-semibold text-[12px] md:text-[13px] 2xl:text-[14px] underline decoration-[#444] hover:text-[#ffffff] hover:decoration-white transition-colors whitespace-nowrap"
+                  >
+                    Read More
+                  </button>
+                </>
+              );
             })()}
-            <button
-              type="button"
-              onClick={() => toggleExpand(prop.id)}
-              aria-label={`Read more about ${prop.title}`}
-              className="ml-2 inline text-white font-semibold text-[12px] md:text-[13px] 2xl:text-[14px] underline decoration-[#444] hover:text-[#ffffff] hover:decoration-white transition-colors"
-            >
-              Read More
-            </button>
           </h4>
         ) : (
           <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#999999] leading-[140%]">
-            {prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1)}
+            {prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1)}{' '}
             <button
               type="button"
               onClick={() => toggleExpand(prop.id)}
               aria-label={`Show less about ${prop.title}`}
-              className="ml-2 inline text-white font-semibold text-[12px] md:text-[13px] 2xl:text-[14px] underline decoration-[#444] hover:text-[#ffffff] hover:decoration-white transition-colors"
+              className="inline text-white font-semibold text-[12px] md:text-[13px] 2xl:text-[14px] underline decoration-[#444] hover:text-[#ffffff] hover:decoration-white transition-colors whitespace-nowrap"
             >
               Show Less
             </button>

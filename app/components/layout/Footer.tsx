@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                   aria-label="Email address"
                   className="flex-1 bg-transparent outline-none text-white placeholder-gray-500 text-sm"
                 />
-                <Image src={inputarrow} alt="Send Icon" width={20} height={20} className="w-5 h-5 opacity-80" />
+                <Image src={inputarrow} alt="Send Icon" width={20} height={20} className="w-5 h-5 opacity-80 cursor-pointer" />
               </div>
             </div>
 
@@ -199,7 +199,7 @@ const Footer: React.FC = () => {
                   aria-label="Email address"
                   className="flex-1 bg-transparent outline-none text-white placeholder-gray-500 text-sm"
                 />
-                <Image src={inputarrow} alt="Send Icon" width={20} height={20} className="w-5 h-5 opacity-80" />
+                <Image src={inputarrow} alt="Send Icon" width={20} height={20} className="w-5 h-5 opacity-80 cursor-pointer" />
               </div>
             </div>
 

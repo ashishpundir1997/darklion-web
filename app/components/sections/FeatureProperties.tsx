@@ -191,7 +191,7 @@ const FeatureProperties = () => {
               aria-label="Previous page"
               aria-disabled={isFirstMobile}
               disabled={isFirstMobile}
-              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isFirstMobile ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center cursor-pointer rounded-full border border-[#262626] ${isFirstMobile ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
                 <path d="M12 15l-5-5 5-5" stroke={isFirstMobile ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -207,7 +207,7 @@ const FeatureProperties = () => {
               aria-label="Next page"
               aria-disabled={isLastMobile}
               disabled={isLastMobile}
-              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isLastMobile ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center cursor-pointer rounded-full border border-[#262626] ${isLastMobile ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
                 <path d="M8 5l5 5-5 5" stroke={isLastMobile ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -224,7 +224,7 @@ const FeatureProperties = () => {
               aria-label="Previous page"
               aria-disabled={isFirstDesktop}
               disabled={isFirstDesktop}
-              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isFirstDesktop ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center cursor-pointer rounded-full border border-[#262626] ${isFirstDesktop ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
                 <path d="M13 16.5l-5.5-5.5L13 5.5" stroke={isFirstDesktop ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -240,7 +240,7 @@ const FeatureProperties = () => {
               aria-label="Next page"
               aria-disabled={isLastDesktop}
               disabled={isLastDesktop}
-              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isLastDesktop ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center cursor-pointer rounded-full border border-[#262626] ${isLastDesktop ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
                 <path d="M9 5.5l5.5 5.5L9 16.5" stroke={isLastDesktop ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

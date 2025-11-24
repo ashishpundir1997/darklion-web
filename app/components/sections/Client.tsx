@@ -167,7 +167,7 @@ const Client = () => {
               aria-label="Previous page"
               aria-disabled={isFirst}
               disabled={isFirst}
-              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isFirst ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center cursor-pointer rounded-full border border-[#262626] ${isFirst ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
                 <path d="M12 15l-5-5 5-5" stroke={isFirst ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -200,7 +200,7 @@ const Client = () => {
               aria-label="Previous page"
               aria-disabled={isFirst}
               disabled={isFirst}
-              className={`cursor-pointer w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isFirst ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`cursor-pointer w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center  rounded-full border border-[#262626] ${isFirst ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
                 <path d="M13 16.5l-5.5-5.5L13 5.5" stroke={isFirst ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -216,7 +216,7 @@ const Client = () => {
               aria-label="Next page"
               aria-disabled={isLast}
               disabled={isLast}
-              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isLast ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center cursor-pointer rounded-full border border-[#262626] ${isLast ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
                 <path d="M9 5.5l5.5 5.5L9 16.5" stroke={isLast ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

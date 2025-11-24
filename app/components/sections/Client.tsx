@@ -1,15 +1,15 @@
 'use client';
 import  { useState, useEffect } from 'react';
-import stars from '../assets/icons/stars.svg';
-import image1 from '../assets/images/image1.png';
-import image2 from '../assets/images/image2.png';
-import image3 from '../assets/images/image3.png';
+import stars from '../../assets/icons/stars.svg';
+import image1 from '../../assets/images/image1.png';
+import image2 from '../../assets/images/image2.png';
+import image3 from '../../assets/images/image3.png';
 import Image, { StaticImageData } from 'next/image';
-import SecondaryCard from './SecondaryCard';
-import SecondaryButton from './SecondaryButton';
+import SecondaryCard from '../ui/common/SecondaryCard';
+import yellowstar from '../../assets/icons/yellowstar.svg';
 
 
-interface FaqItem {
+interface ClientItem {
   id: number;
   image: StaticImageData;
   title: string;
@@ -28,8 +28,8 @@ interface Post {
 const images = [image1, image2, image3];
 const prices = ['$850,000', '$2,400,000', '$3,150,000'];
 
-const Faq = () => {
-  const [faqs, setFaqs] = useState<FaqItem[]>([]);
+const Client = () => {
+  const [clients, setClients] = useState<ClientItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
@@ -44,7 +44,7 @@ const Faq = () => {
         const posts: Post[] = await response.json();
         
         // Map posts to properties with rotating images and prices
-        const mappedFaqs = posts.map((post, index) => ({
+        const mappedClients = posts.map((post, index) => ({
           id: post.id,
           image: images[index % 3], // Rotate through 3 images
           title: post.title,
@@ -52,7 +52,7 @@ const Faq = () => {
           price: prices[index % 3] // Rotate through 3 prices
         }));
         
-        setFaqs(mappedFaqs);
+        setClients(mappedClients);
       } catch (error) {
         console.error('Error fetching posts:', error);
       } finally {
@@ -64,7 +64,7 @@ const Faq = () => {
   }, []);
 
   // Calculate total pages based on screen size (will use desktop calculation for now)
-  const totalPages = Math.ceil(faqs.length / ITEMS_PER_PAGE_DESKTOP);
+  const totalPages = Math.ceil(clients.length / ITEMS_PER_PAGE_DESKTOP);
   const isFirst = currentPage === 1;
   const isLast = currentPage === totalPages;
   
@@ -79,13 +79,13 @@ const Faq = () => {
   // Get current page items for desktop (3 items)
   const getCurrentPageItems = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE_DESKTOP;
-    return faqs.slice(startIndex, startIndex + ITEMS_PER_PAGE_DESKTOP);
+    return clients.slice(startIndex, startIndex + ITEMS_PER_PAGE_DESKTOP);
   };
 
   // Get current page item for mobile (1 item)
   const getCurrentMobileItem = () => {
     const mobilePageIndex = (currentPage - 1) * ITEMS_PER_PAGE_DESKTOP;
-    return faqs.slice(mobilePageIndex, mobilePageIndex + ITEMS_PER_PAGE_MOBILE);
+    return clients.slice(mobilePageIndex, mobilePageIndex + ITEMS_PER_PAGE_MOBILE);
   };
 
   const currentItems = getCurrentPageItems();
@@ -99,10 +99,10 @@ const Faq = () => {
             {/* place stars.svg at /public/icons/stars.svg */}
             <Image src={stars} alt="Stars" className="w-[45px] h-5 md:w-[54px] md:h-6 2xl:w-[68px] 2xl:h-[30px]" />
             <h2 className="font-urbanist font-semibold text-[28px] md:text-[38px] 2xl:text-[48px] leading-[150%] tracking-[0%]">
-              Frequently Asked Questions
+              What Our Clients Say
             </h2>
             <p className='font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#999999]'>
-             Find answers to common questions about Estatein&apos;s services, property listings, and the real estate process. We&apos;re here to provide clarity and assist you every step of the way.
+             Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs.
             </p>
           </div>
           <div className="hidden md:flex md:self-end">
@@ -110,13 +110,13 @@ const Faq = () => {
               type="button"
               className="px-5 py-3.5 2xl:px-6 2xl:py-4 rounded-md border border-[#262626] bg-[#1A1A1A] text-white font-urbanist font-semibold text-[14px] 2xl:text-[18px] hover:bg-[#222] transition-colors cursor-pointer"
             >
-              View All FAQ&apos;s
+              View All Testimonials
             </button>
           </div>
         </div>
       </div>
 
-      {/* Faq Cards */}
+      {/* Client Cards */}
       <div className="grid gap-6 md:grid-cols-3">
         {loading ? (
           // Skeleton Loading
@@ -137,13 +137,13 @@ const Faq = () => {
             {/* Mobile: Show only 1 item */}
             <div className="md:hidden">
               {currentMobileItem.map((prop) => (
-                <FaqCard key={prop.id} prop={prop} />
+                <ClientCard key={prop.id} prop={prop} />
               ))}
             </div>
             {/* Desktop: Show 3 items */}
             <div className="hidden md:contents">
               {currentItems.map((prop) => (
-                <FaqCard key={prop.id} prop={prop} />
+                <ClientCard key={prop.id} prop={prop} />
               ))}
             </div>
           </>
@@ -158,7 +158,7 @@ const Faq = () => {
             type="button"
             className="px-5 py-3.5 2xl:px-6 2xl:py-4 rounded-md border border-[#262626] bg-[#1A1A1A] text-white font-urbanist font-semibold text-[14px] 2xl:text-[18px] hover:bg-[#222] transition-colors cursor-pointer"
           >
-             View All FAQ&apos;s
+            View All Testimonials
           </button>
           <div className="flex items-center gap-2">
             <button
@@ -183,7 +183,7 @@ const Faq = () => {
               aria-label="Next page"
               aria-disabled={isLast}
               disabled={isLast}
-              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isLast ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`cursor-pointer w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isLast ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="20" height="20" fill="none" viewBox="0 0 20 20">
                 <path d="M8 5l5 5-5 5" stroke={isLast ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -216,7 +216,7 @@ const Faq = () => {
               aria-label="Next page"
               aria-disabled={isLast}
               disabled={isLast}
-              className={`cursor-pointer w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isLast ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
+              className={`w-11 h-11 2xl:w-[58px] 2xl:h-[58px] flex items-center justify-center rounded-full border border-[#262626] ${isLast ? 'bg-transparent cursor-not-allowed' : 'bg-[#1A1A1A] hover:bg-[#222]'}`}
             >
               <svg width="22" height="22" fill="none" viewBox="0 0 22 22">
                 <path d="M9 5.5l5.5 5.5L9 16.5" stroke={isLast ? '#808080' : '#FFFFFF'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -233,8 +233,7 @@ const Faq = () => {
 const SkeletonCard = () => {
   return (
     <SecondaryCard className="w-full flex flex-col animate-pulse">
-
-     
+    
       
       {/* Title Skeleton */}
       <div className="h-6 bg-[#1E1E1E] rounded w-3/4 mb-2"></div>
@@ -243,7 +242,7 @@ const SkeletonCard = () => {
       <div className="h-4 bg-[#1E1E1E] rounded w-full mb-1"></div>
       <div className="h-4 bg-[#1E1E1E] rounded w-5/6 mb-3"></div>
       
-      
+   
       
       {/* Button Skeleton */}
       <div className="h-12 bg-[#1E1E1E] rounded w-full mt-2"></div>
@@ -251,29 +250,36 @@ const SkeletonCard = () => {
   );
 };
 
-// Faq Card Component
-interface FaqCardProps {
-  prop: FaqItem;
+// Client Card Component
+interface ClientCardProps {
+  prop: ClientItem;
 }
 
-const FaqCard = ({ prop }: FaqCardProps) => {
+const ClientCard = ({ prop }: ClientCardProps) => {
   return (
     <SecondaryCard className="w-full flex flex-col">
       {/* Image */}
-      
+      <div className="flex gap-2 2xl:[10px] w-[30px] h-[30px] md:w-[38px] md:h-[38px] 2xl:w-11 2xl:h-11">
+        {Array.from({ length: 5 }).map((_, idx) => (
+          <Image
+            key={idx}
+            src={yellowstar}
+            alt="Star"
+            className="w-full h-full object-cover"
+          />
+        ))}
+      </div>
      
       
       {/* Headings */}
       <div className="flex flex-col gap-1.5 md:gap-2.5  2xl:gap-3.5">
-        <div className="h-[50px] md:h-14 2xl:h-[67px]">
-          <h3 className="font-urbanist font-semibold text-[18px] md:text-[20px] 2xl:text-[24px] leading-[140%] line-clamp-2">
-            {prop.title.charAt(0).toUpperCase() + prop.title.slice(1)}
-          </h3>
-        </div>
+        <h3 className="font-urbanist font-semibold text-[18px] md:text-[20px] 2xl:text-[24px] leading-[140%] line-clamp-1">
+          {prop.title.charAt(0).toUpperCase() + prop.title.slice(1)}
+        </h3>
         
         {/* Subtitle with inline Read More / Show Less */}
         
-          <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#999999] leading-[140%] line-clamp-2">
+          <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#ffffff] leading-[140%]">
             {prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1)}  
           </h4> 
       </div>
@@ -281,12 +287,20 @@ const FaqCard = ({ prop }: FaqCardProps) => {
       {/* Price & Button Row */}
       <div className="flex flex-wrap items-center justify-between mt-2 gap-y-3">
     {/* User image, name, and place */}
-    <div className="w-full md:w-auto">
-     <SecondaryButton label="Read More" className='md:text-[14px] 2xl:text-[18px]' width="100%" isSelected={true}/>
+    <div className="flex items-center gap-3">
+      <Image
+        src={prop.image}
+        alt={prop.title}
+        className="rounded-full w-[50px] h-[50px] 2xl:w-[60px] 2xl:h-[60px] object-cover border border-[#262626] bg-[#1A1A1A]"
+      />
+      <div className="flex flex-col">
+        <span className="font-urbanist font-semibold text-white text-[16px] 2xl:text-[20px] leading-tight">John Doe</span>
+        <span className="font-urbanist text-[#999999] text-[14px] 2xl:text-[16px] leading-tight">New York, USA</span>
+      </div>
     </div>
       </div>
     </SecondaryCard>
   );
 };
 
-export default Faq;
+export default Client;

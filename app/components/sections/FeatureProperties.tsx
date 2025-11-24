@@ -1,15 +1,15 @@
 'use client';
 import  { useState, useEffect } from 'react';
-import stars from '../assets/icons/stars.svg';
-import bedIcon from '../assets/icons/Bed.svg';
-import bathroomIcon from '../assets/icons/bathroom.svg';
-import villaIcon from '../assets/icons/villa.svg';
-import image1 from '../assets/images/image1.png';
-import image2 from '../assets/images/image2.png';
-import image3 from '../assets/images/image3.png';
+import stars from '../../assets/icons/stars.svg';
+import bedIcon from '../../assets/icons/Bed.svg';
+import bathroomIcon from '../../assets/icons/bathroom.svg';
+import villaIcon from '../../assets/icons/villa.svg';
+import image1 from '../../assets/images/image1.png';
+import image2 from '../../assets/images/image2.png';
+import image3 from '../../assets/images/image3.png';
 import Image, { StaticImageData } from 'next/image';
-import SecondaryCard from './SecondaryCard';
-import PrimaryButton from './PrimaryButton';
+import SecondaryCard from '../ui/common/SecondaryCard';
+import PrimaryButton from '../ui/common/PrimaryButton';
 
 
 interface PropertyItem {

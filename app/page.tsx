@@ -1,8 +1,8 @@
-import Client from "./components/Client";
-import Faq from "./components/Faq";
-import FeatureProperties from "./components/FeatureProperties";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
+import Client from "./components/sections/Client";
+import Faq from "./components/sections/Faq";
+import FeatureProperties from "./components/sections/FeatureProperties";
+import Hero from "./components/sections/Hero";
+import Navbar from "./components/layout/Navbar";
 
 
 export default function Home() {

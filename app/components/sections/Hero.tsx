@@ -1,16 +1,25 @@
 import React from 'react';
-import NavButtons from './SecondaryButton';
-import PrimaryButton from './PrimaryButton';
+import NavButtons from '../ui/common/SecondaryButton';
+import PrimaryButton from '../ui/common/PrimaryButton';
 import Image from 'next/image';
-import hero from '../assets/images/Container.png';
-import StatCard from './StatCard';
-import Card from './Card';
-import effortlessproperty from '../assets/icons/effortlessproperty.svg';
-import unlockproperty from '../assets/icons/unlock.svg';
-import findproperty from '../assets/icons/finddreamhome.svg';
-import smartinvestments from '../assets/icons/smartinvestment.svg';
-import arrow from '../assets/icons/arrow.svg';
+import hero from '../../assets/images/Container.png';
+import StatCard from '../ui/StatCard';
+import Card from '../ui/common/Card';
+import effortlessproperty from '../../assets/icons/effortlessproperty.svg';
+import unlockproperty from '../../assets/icons/unlock.svg';
+import findproperty from '../../assets/icons/finddreamhome.svg';
+import smartinvestments from '../../assets/icons/smartinvestment.svg';
+import arrow from '../../assets/icons/arrow.svg';
 
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * The Hero component is the main landing page component, containing the 
+ * introduction to the Estatein app, the main call-to-action buttons, 
+ * statistics about the app, and a section showcasing the features of the app.
+ * 
+ * @returns {JSX.Element} - The rendered Hero component element.
+ */
+/*******  933fac5e-d23a-4b83-b6d9-c82daf0a8926  *******/
 const Hero = () => {
   return (
 

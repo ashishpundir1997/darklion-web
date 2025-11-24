@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react';
-import cross from '../assets/icons/bannercross.svg'
+import cross from '../../assets/icons/bannercross.svg'
 import Image from 'next/image';
-import bannerbg from '../assets/images/bannerbg.png';
+import bannerbg from '../../assets/images/bannerbg.png';
 
 export default function Banner() {
   const [isVisible, setIsVisible] = useState(true);

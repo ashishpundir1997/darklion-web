@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import icon from '../assets/icons/icon.svg';
-import hamburger from '../assets/icons/hamburger.svg';
-import NavButtons from './SecondaryButton';
-import Banner from './Banner';
+import icon from '../../assets/icons/icon.svg';
+import hamburger from '../../assets/icons/hamburger.svg';
+import NavButtons from '../ui/common/SecondaryButton';
+import Banner from '../ui/Banner';
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

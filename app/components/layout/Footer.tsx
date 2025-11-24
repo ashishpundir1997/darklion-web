@@ -10,6 +10,9 @@ import facebook from '../../assets/icons/facebook.svg';
 import linkedin from '../../assets/icons/linkedin.svg';
 import x from '../../assets/icons/x.svg';
 import youtube from '../../assets/icons/youtube.svg';
+import leftfooter from '../../assets/images/leftfooter.png';
+import rightfooter from '../../assets/images/rightfooter.png';
+import topfooter from '../../assets/images/topfooter.png';
 
 const Footer: React.FC = () => {
   return (
@@ -17,7 +20,7 @@ const Footer: React.FC = () => {
       <div className=" mx-auto">
         {/* CTA Section */}
         <div 
-          className="flex flex-col md:flex-row md:items-center md:justify-between items-start justify-center gap-[30px] w-full md:w-auto mx-auto px-4 md:px-20 2xl:px-40 mt-20"
+          className="relative flex flex-col md:flex-row md:items-center md:justify-between items-start justify-center gap-[30px] w-full md:w-auto mx-auto px-4 md:px-20 2xl:px-40 mt-20 overflow-hidden"
           style={{
             opacity: 1,
             paddingTop: '50px',
@@ -26,8 +29,48 @@ const Footer: React.FC = () => {
             borderBottom: '1px solid #262626',
           }}
         >
+          {/* Background Images - Mobile/Tablet (below md): top and bottom */}
+          <div className="absolute left-0 top-0 md:hidden pointer-events-none opacity-30 w-full h-1/2 overflow-hidden">
+            <Image 
+              src={topfooter}
+              alt=""
+              fill
+              className="object-cover object-top"
+              style={{ position: 'absolute' }}
+            />
+          </div>
+          <div className="absolute right-0 bottom-0 md:hidden pointer-events-none opacity-30 w-full h-1/2 overflow-hidden">
+            <Image 
+              src={rightfooter}
+              alt=""
+              fill
+              className="object-cover object-bottom"
+              style={{ position: 'absolute' }}
+            />
+          </div>
+          
+          {/* Background Images - Desktop (md and above): left and right */}
+          <div className="hidden md:block absolute left-0 top-0 pointer-events-none opacity-30 h-full overflow-hidden" style={{ width: '40%' }}>
+            <Image 
+              src={leftfooter}
+              alt=""
+              fill
+              className="object-cover object-left"
+              style={{ position: 'absolute' }}
+            />
+          </div>
+          <div className="hidden md:block absolute right-0 top-0 pointer-events-none opacity-30 h-full overflow-hidden" style={{ width: '40%' }}>
+            <Image 
+              src={rightfooter}
+              alt=""
+              fill
+              className="object-cover object-right"
+              style={{ position: 'absolute' }}
+            />
+          </div>
+          
           {/* Left side - Heading and Text */}
-          <div className="flex flex-col gap-[30px] text-left w-full md:w-[70%]">
+          <div className="relative z-10 flex flex-col gap-[30px] text-left w-full md:w-[70%]">
             <h2 className="text-[#ffffff] text-3xl font-bold">
               Start Your Real Estate Journey Today
             </h2>
@@ -38,7 +81,7 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Right side - Button */}
-          <div className="w-full md:w-auto md:flex md:items-center">
+          <div className="relative z-10 w-full md:w-auto md:flex md:items-center">
             <PrimaryButton 
               label="Explore Properties" 
               onClick={() => {

@@ -47,130 +47,209 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Newsletter / Subscription Section */}
+        {/* Combined Newsletter & Navigation Section */}
         <div
-          className="w-full  mt-8"
-          style={{
-            padding: '50px 16px', // Mobile specified padding (top/bottom 16px, left/right 50px)
-            opacity: 1,
-          }}
-        >
-          <div
-            className="flex flex-col md:flex-row md:items-center md:justify-between gap-6"
-          >
-            {/* Logo (stacks above input on mobile) */}
-            <div className="flex items-center gap-2">
-              <Image
-                src={icon}
-                alt="DarkLion Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8"
-              />
-              <h3 className="text-white text-lg font-semibold">Stay Updated</h3>
-            </div>
-
-            {/* Input container */}
-              <div
-              className="flex items-center h-[52px] gap-1.5 rounded-lg border border-[#262626] bg-[#141414] w-full md:max-w-xl"
-              style={{
-                paddingTop: '14px',
-                paddingRight: '20px',
-                paddingBottom: '14px',
-                paddingLeft: '20px',
-              }}
-            >
-              {/* Leading Icon */}
-              <Image
-                src={inputicon}
-                alt="Email Icon"
-                width={20}
-                height={20}
-                className="w-5 h-5 opacity-80"
-              />
-              {/* Email Input */}
-              <input
-                type="email"
-                placeholder="Enter your email"
-                aria-label="Email address"
-                className="flex-1 bg-transparent outline-none text-white placeholder-gray-500 text-sm"
-              />
-              {/* Send Button */}
-             <Image src={inputarrow} alt="Send Icon" width={20} height={20} className="w-5 h-5 opacity-80" />
-            </div>
-          </div>
-        </div>
-        {/* Link Columns Section */}
-        <div
-          className="w-full mx-auto px-4 md:px-16"
+          className="w-full mx-auto px-4 md:px-16 mt-8"
           style={{
             opacity: 1,
             paddingTop: '40px',
             paddingBottom: '40px',
-            // removed top border per request
             borderBottom: '1px solid #262626',
           }}
         >
-          {/* Top Row: Home & About Us */}
-          <div className="grid grid-cols-2 gap-10 md:gap-20">
-            <div className="pr-10 border-r border-[#262626]">
-              <h4 className="text-[#999999] font-semibold mb-4">Home</h4>
-              <ul className="flex flex-col gap-2 text-sm text-white">
-                <li className="transition">Overview</li>
-                <li className="transition">Features</li>
-                <li className="transition">Testimonials</li>
-                <li className="transition">Blog</li>
-                <li className="transition">Careers</li>
-              </ul>
-              <div className="h-0.5 bg-[#262626] mt-4"></div>
+          {/* Mobile & Tablet Layout (sm to md) */}
+          <div className="lg:hidden">
+            {/* Logo and Input */}
+            <div className="flex flex-col gap-6 mb-8">
+              <div className="flex items-center gap-2">
+                <Image
+                  src={icon}
+                  alt="DarkLion Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8"
+                />
+                <h3 className="text-white text-lg font-semibold">Stay Updated</h3>
+              </div>
+              <div
+                className="flex items-center h-[52px] gap-1.5 rounded-lg border border-[#262626] bg-[#141414]"
+                style={{
+                  paddingTop: '14px',
+                  paddingRight: '20px',
+                  paddingBottom: '14px',
+                  paddingLeft: '20px',
+                }}
+              >
+                <Image
+                  src={inputicon}
+                  alt="Email Icon"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 opacity-80"
+                />
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  aria-label="Email address"
+                  className="flex-1 bg-transparent outline-none text-white placeholder-gray-500 text-sm"
+                />
+                <Image src={inputarrow} alt="Send Icon" width={20} height={20} className="w-5 h-5 opacity-80" />
+              </div>
             </div>
-            <div className="pl-10">
-              <h4 className="text-[#999999] font-semibold mb-4">About Us</h4>
-              <ul className="flex flex-col gap-2 text-sm text-white">
-                <li className="transition">Company</li>
-                <li className="transition">Mission</li>
-                <li className="transition">Team</li>
-                <li className="transition">Press</li>
-                <li className="transition">FAQ</li>
-              </ul>
-              <div className="h-0.5 bg-[#262626] mt-4"></div>
+
+            {/* Navigation Links */}
+            <div className="grid grid-cols-2 gap-10">
+              <div className="pr-10 border-r border-[#262626]">
+                <h4 className="text-[#999999] font-semibold mb-4">Home</h4>
+                <ul className="flex flex-col gap-2 text-sm text-white">
+                  <li className="transition">Hero Section</li>
+                  <li className="transition">Features</li>
+                  <li className="transition">Properties</li>
+                  <li className="transition">Testomonials</li>
+                  <li className="transition">FAQ&apos;s</li>
+                </ul>
+                <div className="h-0.5 bg-[#262626] mt-4"></div>
+              </div>
+              <div className="pl-10">
+                <h4 className="text-[#999999] font-semibold mb-4">About Us</h4>
+                <ul className="flex flex-col gap-2 text-sm text-white">
+                  <li className="transition">Our story</li>
+                  <li className="transition">Our Works</li>
+                  <li className="transition">How It Works</li>
+                  <li className="transition">Our Team</li>
+                  <li className="transition">Our Clients</li>
+                </ul>
+                <div className="h-0.5 bg-[#262626] mt-4"></div>
+              </div>
+            </div>
+            
+            <div className="my-8 px-8"></div>
+            
+            <div className="grid grid-cols-2 gap-10">
+              <div className="flex flex-col gap-8 pr-10 border-r border-[#262626]">
+                <div>
+                  <h4 className="text-[#999999] font-semibold mb-4">Properties</h4>
+                  <ul className="flex flex-col gap-2 text-sm text-white">
+                    <li className="transition">Portfolio</li>
+                    <li className="transition">Categories</li>
+                  </ul>
+                  <div className="h-0.5 bg-[#262626] mt-4"></div>
+                </div>
+                <div>
+                  <h4 className="text-[#999999] font-semibold mb-4">Contact Us</h4>
+                  <ul className="flex flex-col gap-2 text-sm text-white">
+                    <li className="transition">Contact Form</li>
+                    <li className="transition">Our Offices</li>
+                  </ul>
+                  <div className="h-0.5 bg-[#262626] mt-4"></div>
+                </div>
+              </div>
+              <div className="pl-10">
+                <h4 className="text-[#999999] font-semibold mb-4">Services</h4>
+                <ul className="flex flex-col gap-2 text-sm text-white">
+                  <li className="transition">Valuation Mastery</li>
+                  <li className="transition">Selling Support</li>
+                  <li className="transition">Strategic Marketing</li>
+                  <li className="transition">Negotiation Wizardry</li>
+                  <li className="transition">Closing Success</li>
+                  <li className="transition">Property Management</li>
+                </ul>
+                <div className="h-0.5 bg-[#262626] mt-4"></div>
+              </div>
             </div>
           </div>
-          {/* 2px separator with horizontal side gap */}
-          <div className="my-8 px-8">
-       
-          </div>
-          {/* Bottom Row: Properties/Contact Us & Services */}
-          <div className="grid grid-cols-2 gap-10 md:gap-20">
-            <div className="flex flex-col gap-8 pr-10 border-r border-[#262626]">
+
+          {/* Desktop/Tablet Layout - Single Row */}
+          <div className="hidden lg:flex lg:gap-12">
+            {/* Left: Logo and Input */}
+            <div className="flex flex-col gap-6 md:w-[280px] lg:w-[320px]">
+              <div className="flex items-center gap-2">
+                <Image
+                  src={icon}
+                  alt="DarkLion Logo"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8"
+                />
+                <h3 className="text-white text-lg font-semibold">Stay Updated</h3>
+              </div>
+              <div
+                className="flex items-center h-[52px] gap-1.5 rounded-lg border border-[#262626] bg-[#141414]"
+                style={{
+                  paddingTop: '14px',
+                  paddingRight: '20px',
+                  paddingBottom: '14px',
+                  paddingLeft: '20px',
+                }}
+              >
+                <Image
+                  src={inputicon}
+                  alt="Email Icon"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 opacity-80"
+                />
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  aria-label="Email address"
+                  className="flex-1 bg-transparent outline-none text-white placeholder-gray-500 text-sm"
+                />
+                <Image src={inputarrow} alt="Send Icon" width={20} height={20} className="w-5 h-5 opacity-80" />
+              </div>
+            </div>
+
+            {/* Right: All Navigation in One Row */}
+            <div className="flex-1 grid grid-cols-5 gap-4 lg:gap-6">
+              <div>
+                <h4 className="text-[#999999] font-semibold mb-4">Home</h4>
+                <ul className="flex flex-col gap-2 text-sm text-white">
+                  <li className="transition">Hero Section</li>
+                  <li className="transition">Features</li>
+                  <li className="transition">Properties</li>
+                  <li className="transition">Testimonials</li>
+                  <li className="transition">FAQ&apos;s</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h4 className="text-[#999999] font-semibold mb-4">About Us</h4>
+                <ul className="flex flex-col gap-2 text-sm text-white">
+                  <li className="transition">Our story</li>
+                  <li className="transition">Our Works</li>
+                  <li className="transition">How It Works</li>
+                  <li className="transition">Our Team</li>
+                  <li className="transition">Our Clients</li>
+                </ul>
+              </div>
+              
               <div>
                 <h4 className="text-[#999999] font-semibold mb-4">Properties</h4>
                 <ul className="flex flex-col gap-2 text-sm text-white">
-                  <li className="transition">Featured Listings</li>
-                  <li className="transition">New Arrivals</li>
+                  <li className="transition">Portfolio</li>
+                  <li className="transition">Categories</li>
                 </ul>
-                <div className="h-0.5 bg-[#262626] mt-4"></div>
               </div>
+              
               <div>
                 <h4 className="text-[#999999] font-semibold mb-4">Contact Us</h4>
                 <ul className="flex flex-col gap-2 text-sm text-white">
-                  <li className="transition">Support</li>
-                  <li className="transition">Locations</li>
+                  <li className="transition">Contact Form</li>
+                  <li className="transition">Our Offices</li>
                 </ul>
-                <div className="h-0.5 bg-[#262626] mt-4"></div>
               </div>
-            </div>
-            <div className="pl-10">
-              <h4 className="text-[#999999] font-semibold mb-4">Services</h4>
-              <ul className="flex flex-col gap-2 text-sm text-white">
-                <li className="transition">Buying Advisory</li>
-                <li className="transition">Selling Support</li>
-                <li className="transition">Property Management</li>
-                <li className="transition">Valuation</li>
-                <li className="transition">Legal Assistance</li>
-                <li className="transition">Investment Consulting</li>
-              </ul>
-              <div className="h-0.5 bg-[#262626] mt-4"></div>
+              
+              <div>
+                <h4 className="text-[#999999] font-semibold mb-4">Services</h4>
+                <ul className="flex flex-col gap-2 text-sm text-white">
+                  <li className="transition">Valuation Mastery</li>
+                  <li className="transition">Selling Support</li>
+                  <li className="transition">Strategic Marketing</li>
+                  <li className="transition">Negotiation Wizardry</li>
+                  <li className="transition">Closing Success</li>
+                  <li className="transition">Property Management</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

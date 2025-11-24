@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
         >
           {/* Left side - Heading and Text */}
           <div className="flex flex-col gap-[30px] text-left w-full md:w-[70%]">
-            <h2 className="text-[#999999] text-3xl font-bold">
+            <h2 className="text-[#ffffff] text-3xl font-bold">
               Start Your Real Estate Journey Today
             </h2>
             

@@ -149,22 +149,22 @@ const Footer: React.FC = () => {
               <div className="pr-10 border-r border-[#262626]">
                 <h4 className="text-[#999999] font-semibold mb-4">Home</h4>
                 <ul className="flex flex-col gap-2 text-sm text-white">
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Hero Section</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Features</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Properties</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Testomonials</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">FAQ&apos;s</li>
+                  <li className="transition ">Hero Section</li>
+                  <li className="transition ">Features</li>
+                  <li className="transition ">Properties</li>
+                  <li className="transition ">Testomonials</li>
+                  <li className="transition ">FAQ&apos;s</li>
                 </ul>
                 <div className="h-0.5 bg-[#262626] mt-4"></div>
               </div>
               <div className="pl-10">
                 <h4 className="text-[#999999] font-semibold mb-4">About Us</h4>
                 <ul className="flex flex-col gap-2 text-sm text-white">
-                  <li className="transition cursor-pointer hover:text-[#999999]">Our story</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Our Works</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">How It Works</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Our Team</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Our Clients</li>
+                  <li className="transition ">Our story</li>
+                  <li className="transition ">Our Works</li>
+                  <li className="transition ">How It Works</li>
+                  <li className="transition ">Our Team</li>
+                  <li className="transition ">Our Clients</li>
                 </ul>
                 <div className="h-0.5 bg-[#262626] mt-4"></div>
               </div>
@@ -177,16 +177,16 @@ const Footer: React.FC = () => {
                 <div>
                   <h4 className="text-[#999999] font-semibold mb-4">Properties</h4>
                   <ul className="flex flex-col gap-2 text-sm text-white">
-                    <li className="transition cursor-pointer hover:text-[#00BFFF]">Portfolio</li>
-                    <li className="transition cursor-pointer hover:text-[#00BFFF]">Categories</li>
+                    <li className="transition ">Portfolio</li>
+                    <li className="transition ">Categories</li>
                   </ul>
                   <div className="h-0.5 bg-[#262626] mt-4"></div>
                 </div>
                 <div>
                   <h4 className="text-[#999999] font-semibold mb-4">Contact Us</h4>
                   <ul className="flex flex-col gap-2 text-sm text-white">
-                    <li className="transition cursor-pointer hover:text-[#00BFFF]">Contact Form</li>
-                    <li className="transition cursor-pointer hover:text-[#00BFFF]">Our Offices</li>
+                    <li className="transition ">Contact Form</li>
+                    <li className="transition ">Our Offices</li>
                   </ul>
                   <div className="h-0.5 bg-[#262626] mt-4"></div>
                 </div>
@@ -194,12 +194,12 @@ const Footer: React.FC = () => {
               <div className="pl-10">
                 <h4 className="text-[#999999] font-semibold mb-4">Services</h4>
                 <ul className="flex flex-col gap-2 text-sm text-white">
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Valuation Mastery</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Selling Support</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Strategic Marketing</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Negotiation Wizardry</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Closing Success</li>
-                  <li className="transition cursor-pointer hover:text-[#00BFFF]">Property Management</li>
+                  <li className="transition ">Valuation Mastery</li>
+                  <li className="transition ">Selling Support</li>
+                  <li className="transition ">Strategic Marketing</li>
+                  <li className="transition ">Negotiation Wizardry</li>
+                  <li className="transition ">Closing Success</li>
+                  <li className="transition ">Property Management</li>
                 </ul>
                 <div className="h-0.5 bg-[#262626] mt-4"></div>
               </div>

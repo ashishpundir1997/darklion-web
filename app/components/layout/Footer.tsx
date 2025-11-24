@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
       <div className="max-w-[1920px] mx-auto">
         {/* CTA Section */}
         <div 
-          className="flex flex-col md:flex-row md:items-center md:justify-between items-start justify-center gap-[30px] w-full md:w-auto mx-auto px-4 md:px-16 mt-20"
+          className="flex flex-col md:flex-row md:items-center md:justify-between items-start justify-center gap-[30px] w-full md:w-auto mx-auto px-4 md:px-20 2xl:px-40 mt-20"
           style={{
             opacity: 1,
             paddingTop: '50px',
@@ -53,7 +53,7 @@ const Footer: React.FC = () => {
 
         {/* Combined Newsletter & Navigation Section */}
         <div
-          className="w-full mx-auto px-4 md:px-16 mt-8"
+          className="w-full mx-auto px-4 md:px-20 2xl:px-40 mt-8"
           style={{
             opacity: 1,
             paddingTop: '40px',
@@ -292,13 +292,11 @@ const Footer: React.FC = () => {
 
           {/* Desktop Layout (lg and above) */}
           <div
-            className="hidden lg:flex items-center justify-between"
+            className="hidden lg:flex items-center justify-between px-4 md:px-20 2xl:px-40"
             style={{
               height: '68px',
               paddingTop: '12px',
-              paddingRight: '80px',
               paddingBottom: '12px',
-              paddingLeft: '80px',
             }}
           >
             {/* Copyright & Terms */}

@@ -11,15 +11,6 @@ import findproperty from '../../assets/icons/finddreamhome.svg';
 import smartinvestments from '../../assets/icons/smartinvestment.svg';
 import arrow from '../../assets/icons/arrow.svg';
 
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * The Hero component is the main landing page component, containing the 
- * introduction to the Estatein app, the main call-to-action buttons, 
- * statistics about the app, and a section showcasing the features of the app.
- * 
- * @returns {JSX.Element} - The rendered Hero component element.
- */
-/*******  933fac5e-d23a-4b83-b6d9-c82daf0a8926  *******/
 const Hero = () => {
   return (
 

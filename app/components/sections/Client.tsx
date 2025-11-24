@@ -257,9 +257,9 @@ interface ClientCardProps {
 
 const ClientCard = ({ prop }: ClientCardProps) => {
   return (
-    <SecondaryCard className="w-full flex flex-col">
-      {/* Image */}
-      <div className="flex gap-2 2xl:[10px] w-[30px] h-[30px] md:w-[38px] md:h-[38px] 2xl:w-11 2xl:h-11">
+    <SecondaryCard className="w-full flex flex-col h-full">
+      {/* Stars */}
+      <div className="flex gap-2 2xl:gap-2.5 w-[30px] h-[30px] md:w-[38px] md:h-[38px] 2xl:w-11 2xl:h-11 mb-4 md:mb-5 2xl:mb-6">
         {Array.from({ length: 5 }).map((_, idx) => (
           <Image
             key={idx}
@@ -269,35 +269,30 @@ const ClientCard = ({ prop }: ClientCardProps) => {
           />
         ))}
       </div>
-     
       
-      {/* Headings */}
-      <div className="flex flex-col gap-1.5 md:gap-2.5  2xl:gap-3.5">
+      {/* Headings - flex-1 to push content below to bottom */}
+      <div className="flex flex-col gap-1.5 md:gap-2.5 2xl:gap-3.5 flex-1">
         <h3 className="font-urbanist font-semibold text-[18px] md:text-[20px] 2xl:text-[24px] leading-[140%] line-clamp-1">
           {prop.title.charAt(0).toUpperCase() + prop.title.slice(1)}
         </h3>
         
-        {/* Subtitle with inline Read More / Show Less */}
-        
-          <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#ffffff] leading-[140%]">
-            {prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1)}  
-          </h4> 
+        {/* Subtitle */}
+        <h4 className="font-urbanist font-medium text-[14px] md:text-[16px] 2xl:text-[18px] text-[#ffffff] leading-[140%]">
+          {prop.subtitle.charAt(0).toUpperCase() + prop.subtitle.slice(1)}  
+        </h4> 
       </div>
       
-      {/* Price & Button Row */}
-      <div className="flex flex-wrap items-center justify-between mt-2 gap-y-3">
-    {/* User image, name, and place */}
-    <div className="flex items-center gap-3">
-      <Image
-        src={prop.image}
-        alt={prop.title}
-        className="rounded-full w-[50px] h-[50px] 2xl:w-[60px] 2xl:h-[60px] object-cover border border-[#262626] bg-[#1A1A1A]"
-      />
-      <div className="flex flex-col">
-        <span className="font-urbanist font-semibold text-white text-[16px] 2xl:text-[20px] leading-tight">John Doe</span>
-        <span className="font-urbanist text-[#999999] text-[14px] 2xl:text-[16px] leading-tight">New York, USA</span>
-      </div>
-    </div>
+      {/* User Info - Always at bottom */}
+      <div className="flex items-center gap-3 mt-4 md:mt-5 2xl:mt-6">
+        <Image
+          src={prop.image}
+          alt={prop.title}
+          className="rounded-full w-[50px] h-[50px] 2xl:w-[60px] 2xl:h-[60px] object-cover border border-[#262626] bg-[#1A1A1A]"
+        />
+        <div className="flex flex-col">
+          <span className="font-urbanist font-semibold text-white text-[16px] 2xl:text-[20px] leading-tight">John Doe</span>
+          <span className="font-urbanist text-[#999999] text-[14px] 2xl:text-[16px] leading-tight">New York, USA</span>
+        </div>
       </div>
     </SecondaryCard>
   );

@@ -6,6 +6,10 @@ import PrimaryButton from '../ui/common/PrimaryButton';
 import icon from '../../assets/icons/icon.svg';
 import inputicon from '../../assets/icons/inputicon.svg';
 import inputarrow from '../../assets/icons/inputarrow.svg';
+import facebook from '../../assets/icons/facebook.svg';
+import linkedin from '../../assets/icons/linkedin.svg';
+import x from '../../assets/icons/x.svg';
+import youtube from '../../assets/icons/youtube.svg';
 
 const Footer: React.FC = () => {
   return (
@@ -250,6 +254,69 @@ const Footer: React.FC = () => {
                   <li className="transition">Property Management</li>
                 </ul>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Social Media & Copyright Section */}
+        <div
+          className="w-full bg-[#1A1A1A]"
+          style={{
+            borderTop: '1px solid #262626',
+            opacity: 1,
+          }}
+        >
+          {/* Mobile & Tablet Layout (below lg) */}
+          <div
+            className="lg:hidden flex flex-col items-center gap-5 py-5 px-4"
+           
+          >
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-2">
+              <Image src={facebook} alt="Facebook" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+              <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+              <Image src={x} alt="X" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+              <Image src={youtube} alt="YouTube" width={24} height={24} className="w-[60px] h-[60px] lg:w-10 lg:h-10 2xl:w-10 2xl:h-10 cursor-pointer" />
+            </div>
+            
+            {/* Copyright */}
+            <p className="text-[#999999] text-sm text-center">
+              @2024 Estatein. All Rights Reserved.
+            </p>
+            
+            {/* Terms */}
+            <p className="text-[#999999] text-sm text-center cursor-pointer hover:text-white transition">
+              Terms & Conditions
+            </p>
+          </div>
+
+          {/* Desktop Layout (lg and above) */}
+          <div
+            className="hidden lg:flex items-center justify-between"
+            style={{
+              height: '68px',
+              paddingTop: '12px',
+              paddingRight: '80px',
+              paddingBottom: '12px',
+              paddingLeft: '80px',
+            }}
+          >
+            {/* Copyright & Terms */}
+            <div className="flex items-center gap-6">
+              <p className="text-[#999999] text-sm">
+                @2024 Estatein. All Rights Reserved.
+              </p>
+              <p className="text-[#999999] text-sm cursor-pointer hover:text-white transition">
+                Terms & Conditions
+              </p>
+            </div>
+            
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-2">
+              <Image src={facebook} alt="Facebook" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
+              <Image src={linkedin} alt="LinkedIn" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
+              <Image src={x} alt="X" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
+              <Image src={youtube} alt="YouTube" width={24} height={24} className="w-6 h-6 cursor-pointer hover:opacity-80 transition" />
             </div>
           </div>
         </div>
